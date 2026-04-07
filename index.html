@@ -224,38 +224,6 @@
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* ── Install hint (iOS) ── */
-    .install-hint {
-      position: fixed;
-      bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(245,239,230,0.95);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 20px;
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s;
-      z-index: 10;
-    }
-
-    .install-hint.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .install-hint span {
-      color: var(--rose-lt);
-    }
   </style>
 </head>
 <body>
@@ -346,9 +314,6 @@
   <div class="ornament-bottom"></div>
 </div>
 
-<div class="install-hint" id="hint">
-  点击 <span>分享</span> 然后「<span>添加到主屏幕</span>」即可像 App 一样使用
-</div>
 
 <script>
 // ── Petal canvas ──
@@ -481,16 +446,6 @@
   setInterval(update, 60000);
 })();
 
-// ── iOS install hint ──
-(function () {
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  const isStandalone = window.navigator.standalone;
-  if (isIOS && !isStandalone) {
-    const hint = document.getElementById('hint');
-    setTimeout(() => hint.classList.add('show'), 3000);
-    setTimeout(() => hint.classList.remove('show'), 9000);
-  }
-})();
 
 // ── Service Worker ──
 if ('serviceWorker' in navigator) {
