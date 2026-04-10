@@ -237,58 +237,100 @@
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="hg" x1="30%" y1="10%" x2="70%" y2="100%">
-          <stop offset="0%"   stop-color="#e0c0c8" stop-opacity="0.13"/>
+          <stop offset="0%"   stop-color="#f0e0d0" stop-opacity="0.18"/>
           <stop offset="100%" stop-color="#7a2030" stop-opacity="0.07"/>
         </linearGradient>
+        <clipPath id="hc">
+          <path d="M50,81 C27,66 10,48 10,30 C10,18 19,11 29,12.5
+                   C36.5,13.5 43,19.5 50,27.5
+                   C57,19.5 63.5,13.5 71,12.5
+                   C81,11 90,18 90,30 C90,48 73,66 50,81Z"/>
+        </clipPath>
       </defs>
 
-      <!-- outer dashed ring -->
-      <circle cx="50" cy="50" r="45.5" fill="none"
-              stroke="#c8a890" stroke-width="0.45"
-              stroke-dasharray="1.8 3.8" opacity="0.45"/>
-      <!-- inner solid ring -->
-      <circle cx="50" cy="50" r="41" fill="none"
-              stroke="#c8a890" stroke-width="0.2" opacity="0.2"/>
+      <!-- outer double dashed ring -->
+      <circle cx="50" cy="50" r="46"   fill="none" stroke="#c8a870" stroke-width="0.45" stroke-dasharray="1.6 4"   opacity="0.52"/>
+      <circle cx="50" cy="50" r="43.5" fill="none" stroke="#c8a870" stroke-width="0.2"  stroke-dasharray="0.4 2.5" opacity="0.28"/>
+
+      <!-- cardinal ornament dots -->
+      <circle cx="50"   cy="3.5"  r="0.9" fill="#c8a870" opacity="0.45"/>
+      <circle cx="50"   cy="96.5" r="0.9" fill="#c8a870" opacity="0.45"/>
+      <circle cx="3.5"  cy="50"   r="0.9" fill="#c8a870" opacity="0.45"/>
+      <circle cx="96.5" cy="50"   r="0.9" fill="#c8a870" opacity="0.45"/>
 
       <!-- ghost fill -->
-      <path d="M50,81 C28,66 11,49 11,31 C11,19 20,12 30,13.5
-               C37.5,14.5 43.5,20.5 50,28.5
-               C56.5,20.5 62.5,14.5 70,13.5
-               C80,12 89,19 89,31 C89,49 72,66 50,81Z"
+      <path d="M50,81 C27,66 10,48 10,30 C10,18 19,11 29,12.5
+               C36.5,13.5 43,19.5 50,27.5
+               C57,19.5 63.5,13.5 71,12.5
+               C81,11 90,18 90,30 C90,48 73,66 50,81Z"
             fill="url(#hg)"/>
 
-      <!-- outer heart — thin precise stroke -->
-      <path d="M50,81 C28,66 11,49 11,31 C11,19 20,12 30,13.5
-               C37.5,14.5 43.5,20.5 50,28.5
-               C56.5,20.5 62.5,14.5 70,13.5
-               C80,12 89,19 89,31 C89,49 72,66 50,81Z"
-            fill="none" stroke="#9a5060" stroke-width="0.75" opacity="0.85"/>
+      <!-- vintage engraving hatch lines (clipped to heart) -->
+      <g clip-path="url(#hc)" opacity="0.11">
+        <line x1="-10" y1="60"  x2="60"  y2="-10" stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="-10" y1="70"  x2="70"  y2="-10" stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="-10" y1="80"  x2="80"  y2="-10" stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="-10" y1="90"  x2="90"  y2="-10" stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="-10" y1="100" x2="100" y2="-10" stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="0"   y1="110" x2="110" y2="0"   stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="10"  y1="110" x2="110" y2="10"  stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="20"  y1="110" x2="110" y2="20"  stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="30"  y1="110" x2="110" y2="30"  stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="40"  y1="110" x2="110" y2="40"  stroke="#6a3020" stroke-width="0.55"/>
+        <line x1="50"  y1="110" x2="110" y2="50"  stroke="#6a3020" stroke-width="0.55"/>
+      </g>
 
-      <!-- inner echo -->
-      <path d="M50,73 C32,60 20,47 20,33 C20,24.5 26,19 33,20
-               C39,21 44,26.5 50,33.5
-               C56,26.5 61,21 67,20
-               C74,19 80,24.5 80,33 C80,47 68,60 50,73Z"
-            fill="none" stroke="#b88090" stroke-width="0.4" opacity="0.55"/>
+      <!-- main heart outline -->
+      <path d="M50,81 C27,66 10,48 10,30 C10,18 19,11 29,12.5
+               C36.5,13.5 43,19.5 50,27.5
+               C57,19.5 63.5,13.5 71,12.5
+               C81,11 90,18 90,30 C90,48 73,66 50,81Z"
+            fill="none" stroke="#8a4050" stroke-width="0.82" opacity="0.88"/>
 
-      <!-- faint second echo -->
-      <path d="M50,65 C37,55 28,45 28,35 C28,29 32.5,25 37.5,26
-               C42,27 46,31 50,37
-               C54,31 58,27 62.5,26
-               C67.5,25 72,29 72,35 C72,45 63,55 50,65Z"
-            fill="none" stroke="#c8a890" stroke-width="0.28" opacity="0.35"/>
+      <!-- inner echo 1 -->
+      <path d="M50,73 C31,59 20,46 20,32 C20,24 26,18.5 33,19.5
+               C39,20.5 44,25.5 50,32.5
+               C56,25.5 61,20.5 67,19.5
+               C74,18.5 80,24 80,32 C80,46 69,59 50,73Z"
+            fill="none" stroke="#b07878" stroke-width="0.38" opacity="0.58"/>
 
-      <!-- bottom tip lozenge -->
-      <path d="M50,85.5 L52.5,81.5 L50,77.5 L47.5,81.5Z"
-            fill="none" stroke="#9a5060" stroke-width="0.6" opacity="0.65"/>
+      <!-- inner echo 2 -->
+      <path d="M50,65 C36,54 27,44 27,34 C27,28 32,24 37.5,25
+               C42,26 46,30 50,36
+               C54,30 58,26 62.5,25
+               C68,24 73,28 73,34 C73,44 64,54 50,65Z"
+            fill="none" stroke="#c0a070" stroke-width="0.26" opacity="0.42"/>
 
-      <!-- top dip lozenge -->
-      <path d="M50,24 L52,27.5 L50,31 L48,27.5Z"
-            fill="none" stroke="#b88090" stroke-width="0.5" opacity="0.5"/>
+      <!-- inner echo 3 -->
+      <path d="M50,57 C41,49 34,42 34,35.5 C34,31.5 37,29 40.5,29.5
+               C44,30 47,33.5 50,38.5
+               C53,33.5 56,30 59.5,29.5
+               C63,29 66,31.5 66,35.5 C66,42 59,49 50,57Z"
+            fill="none" stroke="#c0a070" stroke-width="0.18" opacity="0.28"/>
 
-      <!-- lobe accent circles -->
-      <circle cx="21" cy="26" r="0.85" fill="none" stroke="#b88090" stroke-width="0.5" opacity="0.4"/>
-      <circle cx="79" cy="26" r="0.85" fill="none" stroke="#b88090" stroke-width="0.5" opacity="0.4"/>
+      <!-- ── top dip scrollwork ── -->
+      <path d="M50,22 L52,26.5 L50,31 L48,26.5Z"
+            fill="none" stroke="#8a4050" stroke-width="0.55" opacity="0.62"/>
+      <path d="M48.5,26.5 Q43,21.5 37.5,23.5 Q34.5,25.5 36,28.5"
+            fill="none" stroke="#b07878" stroke-width="0.42" opacity="0.52"/>
+      <path d="M36,28.5 Q35,31 37.5,31.5"
+            fill="none" stroke="#b07878" stroke-width="0.3"  opacity="0.36"/>
+      <path d="M51.5,26.5 Q57,21.5 62.5,23.5 Q65.5,25.5 64,28.5"
+            fill="none" stroke="#b07878" stroke-width="0.42" opacity="0.52"/>
+      <path d="M64,28.5 Q65,31 62.5,31.5"
+            fill="none" stroke="#b07878" stroke-width="0.3"  opacity="0.36"/>
+
+      <!-- ── bottom tip ornament ── -->
+      <path d="M50,85.5 L53,81 L50,76.5 L47,81Z"
+            fill="none" stroke="#8a4050" stroke-width="0.58" opacity="0.65"/>
+      <line x1="50"   y1="85.5" x2="50"   y2="88.5" stroke="#b07878" stroke-width="0.38" opacity="0.45"/>
+      <line x1="48.5" y1="88.5" x2="51.5" y2="88.5" stroke="#b07878" stroke-width="0.38" opacity="0.4"/>
+
+      <!-- ── lobe cross ornaments ── -->
+      <line x1="22" y1="19" x2="22" y2="25" stroke="#c0a070" stroke-width="0.38" opacity="0.42"/>
+      <line x1="19" y1="22" x2="25" y2="22" stroke="#c0a070" stroke-width="0.38" opacity="0.42"/>
+      <line x1="78" y1="19" x2="78" y2="25" stroke="#c0a070" stroke-width="0.38" opacity="0.42"/>
+      <line x1="75" y1="22" x2="81" y2="22" stroke="#c0a070" stroke-width="0.38" opacity="0.42"/>
     </svg>
   </div>
 
